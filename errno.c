@@ -23,7 +23,17 @@
 static int global_errno;
 
 int *
-errno_ux2003(void)
+errno_global_ux2003(void)
 {
 	return &global_errno;
+}
+
+/* Default implementation of the function which returns a pointer
+ * to errno; when using pthreads, this implementation is overridden.
+ */
+ 
+int *
+errno_ux2003(void)
+{
+	return errno_global_ux2003();
 }

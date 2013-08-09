@@ -22,6 +22,7 @@
 # include "errno.h"
 # undef errno
 
-int *errno_ux2003(void) UX_SYM03_(errno);
+int *errno_ux2003(void) UX_SYM03_(errno) UX_WEAK_;
+int *errno_global_ux2003(void) UX_SYM03_(errno_global_);
 
 #endif /*!P_LIBERRNO_H_*/
