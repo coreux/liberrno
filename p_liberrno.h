@@ -24,5 +24,6 @@
 
 int *errno_ux2003(void) UX_SYM03_(errno) UX_WEAK_;
 int *errno_global_ux2003(void) UX_PRIVATE_(errno_global);
+int set_errno_ux2003(int err) UX_PRIVATE_(set_errno) UX_WEAK_;
 
 #endif /*!P_LIBERRNO_H_*/

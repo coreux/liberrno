@@ -37,3 +37,13 @@ errno_ux2003(void)
 {
 	return errno_global_ux2003();
 }
+
+/* Default implementation of the function which is called from syscall
+ * stubs to set the errno value
+ */
+int
+set_errno_ux2003(int err)
+{
+	global_errno = err;
+	return err;
+}
