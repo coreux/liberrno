@@ -23,6 +23,6 @@
 # undef errno
 
 int *errno_ux2003(void) UX_SYM03_(errno) UX_WEAK_;
-int *errno_global_ux2003(void) UX_SYM03_(errno_global_);
+int *errno_global_ux2003(void) UX_PRIVATE_(errno_global);
 
 #endif /*!P_LIBERRNO_H_*/
