@@ -55,6 +55,8 @@ UX_END_DECLS_
 #  include <ux/freebsd/errno.h>
 # elif defined(__OpenBSD__)
 #  include <ux/openbsd/errno.h>
+# elif defined(__NetBSD__)
+#  include <ux/netbsd/errno.h>
 # elif defined(__QNXNTO__)
 #  include <ux/neutrino/errno.h>
 # elif defined(__CYGWIN__)

@@ -34,7 +34,9 @@ ux/interix/Makefile
 ux/linux/Makefile
 ux/minix/Makefile
 ux/msvcrt/Makefile
+ux/netbsd/Makefile
 ux/neutrino/Makefile
+ux/openbsd/Makefile
 ux/solaris/Makefile
 ])
 

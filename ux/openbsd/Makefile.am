@@ -12,16 +12,6 @@
 ##  See the License for the specific language governing permissions and
 ##  limitations under the License.
 
-SUBDIRS = \
-	beos \
-	cygwin \
-	darwin \
-	freebsd \
-	interix \
-	linux \
-	minix \
-	msvcrt \
-	netbsd \
-	neutrino \
-	openbsd \
-	solaris
+subincludedir = $(includedir)/ux/openbsd
+
+subinclude_HEADERS = errno.h
