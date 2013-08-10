@@ -30,6 +30,7 @@ ux/beos/Makefile
 ux/cygwin/Makefile
 ux/darwin/Makefile
 ux/freebsd/Makefile
+ux/interix/Makefile
 ux/linux/Makefile
 ux/minix/Makefile
 ux/msvcrt/Makefile

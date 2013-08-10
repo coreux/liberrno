@@ -53,10 +53,14 @@ UX_END_DECLS_
 #  include <ux/beos/errno.h>
 # elif defined(__FreeBSD__)
 #  include <ux/freebsd/errno.h>
+# elif defined(__OpenBSD__)
+#  include <ux/openbsd/errno.h>
 # elif defined(__QNXNTO__)
 #  include <ux/neutrino/errno.h>
 # elif defined(__CYGWIN__)
 #  include <ux/cygwin/errno.h>
+# elif defined(__INTERIX) || defined(__OPENNT)
+#  include <ux/interix/errno.h>
 # elif (defined(__WIN32__) || defined(__WIN64__)|| defined(_WIN32) || defined(_WIN64)) && !defined(_VC_NODEFAULTLIB)
 #  include <ux/msvcrt/errno.h>
 # endif
