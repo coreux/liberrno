@@ -50,7 +50,15 @@ UX_END_DECLS_
 # elif defined(_MINIX)
 #  include <ux/minix/errno.h>
 # elif defined(__BEOS__)
-#  include <ux/beos/errno.h>	
+#  include <ux/beos/errno.h>
+# elif defined(__FreeBSD__)
+#  include <ux/freebsd/errno.h>
+# elif defined(__QNXNTO__)
+#  include <ux/neutrino/errno.h>
+# elif defined(__CYGWIN__)
+#  include <ux/cygwin/errno.h>
+# elif (defined(__WIN32__) || defined(__WIN64__)|| defined(_WIN32) || defined(_WIN64)) && !defined(_VC_NODEFAULTLIB)
+#  include <ux/msvcrt/errno.h>
 # endif
 
 #endif /*!UX_ERRNO_H_*/

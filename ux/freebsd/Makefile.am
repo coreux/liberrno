@@ -12,4 +12,6 @@
 ##  See the License for the specific language governing permissions and
 ##  limitations under the License.
 
-SUBDIRS = beos cygwin darwin freebsd linux minix msvcrt neutrino solaris
+subincludedir = $(includedir)/ux/freebsd
+
+subinclude_HEADERS = errno.h
