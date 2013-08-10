@@ -49,7 +49,7 @@ UX_END_DECLS_
 #  include <ux/solaris/errno.h>
 # elif defined(_MINIX)
 #  include <ux/minix/errno.h>
-# elif defined(__BEOS__)
+# elif defined(__BEOS__) || defined(__HAIKU__)
 #  include <ux/beos/errno.h>
 # elif defined(__FreeBSD__)
 #  include <ux/freebsd/errno.h>
