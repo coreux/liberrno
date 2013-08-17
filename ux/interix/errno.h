@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-#ifndef UX_INTERIX_ERRNO_H_
-# define UX_INTERIX_ERRNO_H_           1
+#ifndef __UX_INTERIX_ERRNO_H
+# define __UX_INTERIX_ERRNO_H          1
 
 # if !defined(__INTERIX) && !defined(__OPENNT)
 #  error Compilation of this file is only supported on Microsoft Subsystem for Unix Applications (SUA)
@@ -101,4 +101,4 @@
 # define EWOULDBLOCK                   11  /* Operation would block. */
 # define EXDEV                         18  /* Cross-device link. */
 
-#endif /*!UX_INTERIX_ERRNO_H_*/
+#endif /*!__UX_INTERIX_ERRNO_H*/

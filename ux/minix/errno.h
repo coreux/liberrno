@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-#ifndef UX_MINIX_ERRNO_H_
-# define UX_MINIX_ERRNO_H_             1
+#ifndef __UX_MINIX_ERRNO_H
+# define __UX_MINIX_ERRNO_H            1
 
 # ifndef _MINIX
 #  error Compilation of this file is only supported on Minix
@@ -101,4 +101,4 @@
 # define EWOULDBLOCK                   54  /* Operation would block. */
 # define EXDEV                         18  /* Cross-device link. */
 
-#endif /*!UX_MINIX_ERRNO_H_*/
+#endif /*!__UX_MINIX_ERRNO_H*/

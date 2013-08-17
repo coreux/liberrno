@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-#ifndef UX_MSVCRT_ERRNO_H_
-# define UX_MSVCRT_ERRNO_H_            1
+#ifndef __UX_MSVCRT_ERRNO_H
+# define __UX_MSVCRT_ERRNO_H           1
 
 # if !defined(__WIN32__) && !defined(__WIN64__) && !defined(_WIN32) && !defined(_WIN64)
 #  error Compilation of this file is only supported on Win32 or Win64
@@ -101,4 +101,4 @@
 # define EWOULDBLOCK                   140 /* Operation would block. */
 # define EXDEV                         18  /* Cross-device link. */
 
-#endif /*!UX_MSVCRT_ERRNO_H_*/
+#endif /*!__UX_MSVCRT_ERRNO_H*/

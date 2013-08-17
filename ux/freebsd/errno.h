@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-#ifndef UX_FREEBSD_ERRNO_H_
-# define UX_FREEBSD_ERRNO_H_           1
+#ifndef __UX_FREEBSD_ERRNO_H_
+# define __UX_FREEBSD_ERRNO_H          1
 
 # ifndef __FreeBSD__
 #  error Compilation of this file is only supported on FreeBSD
@@ -101,4 +101,4 @@
 # define EWOULDBLOCK                   35  /* Operation would block. */
 # define EXDEV                         18  /* Cross-device link. */
 
-#endif /*!UX_FREEBSD_ERRNO_H_*/
+#endif /*!__UX_FREEBSD_ERRNO_H_*/

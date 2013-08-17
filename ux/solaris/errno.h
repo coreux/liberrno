@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-#ifndef UX_SOLARIS_ERRNO_H_
-# define UX_SOLARIS_ERRNO_H_           1
+#ifndef __UX_SOLARIS_ERRNO_H
+# define __UX_SOLARIS_ERRNO_H          1
 
 # if !defined(__sun__) || !defined(__svr4__)
 #  error Compilation of this file is only supported on Solaris
@@ -101,4 +101,4 @@
 # define EWOULDBLOCK                   11  /* Operation would block. */
 # define EXDEV                         18  /* Cross-device link. */
 
-#endif /*!UX_SOLARIS_ERRNO_H_*/
+#endif /*!__UX_SOLARIS_ERRNO_H*/

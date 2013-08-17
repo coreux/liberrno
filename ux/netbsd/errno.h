@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-#ifndef UX_NETBSD_ERRNO_H_
-# define UX_NETBSD_ERRNO_H_            1
+#ifndef __UX_NETBSD_ERRNO_H
+# define __UX_NETBSD_ERRNO_H           1
 
 # ifndef __NetBSD__
 #  error Compilation of this file is only supported on NetBSD
@@ -101,4 +101,4 @@
 # define EWOULDBLOCK                   35  /* Operation would block. */
 # define EXDEV                         18  /* Cross-device link. */
 
-#endif /*!UX_NETBSD_ERRNO_H_*/
+#endif /*!__UX_NETBSD_ERRNO_H*/

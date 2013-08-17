@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-#ifndef UX_BEOS_ERRNO_H_
-# define UX_BEOS_ERRNO_H_              1
+#ifndef __UX_BEOS_ERRNO_H
+# define __UX_BEOS_ERRNO_H             1
 
 # if !defined(__BEOS__) && !defined(__HAIKU__)
 #  error Compilation of this file is only supported on BeOS and Haiku
@@ -101,4 +101,4 @@
 # define EWOULDBLOCK                   -2147483637 /* Operation would block. */
 # define EXDEV                         -2147459061 /* Cross-device link. */
 
-#endif /*!UX_BEOS_ERRNO_H_*/
+#endif /*!__UX_BEOS_ERRNO_H*/

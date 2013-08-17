@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-#ifndef UX_OPENBSD_ERRNO_H_
-# define UX_OPENBSD_ERRNO_H_           1
+#ifndef __UX_OPENBSD_ERRNO_H
+# define __UX_OPENBSD_ERRNO_H          1
 
 # ifndef __OpenBSD__
 #  error Compilation of this file is only supported on OpenBSD
@@ -101,4 +101,4 @@
 # define EWOULDBLOCK                   35  /* Operation would block. */
 # define EXDEV                         18  /* Cross-device link. */
 
-#endif /*!UX_OPENBSD_ERRNO_H_*/
+#endif /*!__UX_OPENBSD_ERRNO_H*/

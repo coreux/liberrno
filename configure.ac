@@ -13,15 +13,18 @@
 ##  limitations under the License.
 
 AC_INIT([liberrno],[master],[https://github.com/coreux/liberrno/issues],,[https://github.com/coreux/liberrno])
+AC_CONFIG_AUX_DIR([.])
+AC_CONFIG_MACRO_DIR([.])
 AM_INIT_AUTOMAKE([foreign])
-AC_CONFIG_MACRO_DIR([m4])
 AM_MAINTAINER_MODE
 BT_PROG_XCODE
 AC_PROG_CC
 AC_PROG_CC_C99
 BT_PROG_CC_WARN
+BT_ENABLE_XSI
 AC_CONFIG_HEADER([config.h])
 LT_INIT
+
 AC_CHECK_HEADER([ux/cdefs.h],,[AC_MSG_ERROR([cannot locate required ux/cdefs.h; ensure the UX include package is installed])])
 
 AC_CONFIG_FILES([Makefile

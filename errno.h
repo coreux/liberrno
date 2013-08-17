@@ -22,20 +22,20 @@ Inclusion of the <string.h> header may also make visible all symbols from <stdde
 
 */
 
-#ifndef UX_ERRNO_H_
-# define UX_ERRNO_H_                   1
+#ifndef __UX_ERRNO_H
+# define __UX_ERRNO_H                  1
 
 # include <ux/cdefs.h>
 
 # undef errno
 
-UX_BEGIN_DECLS_
+__UX_BEGIN_DECLS
 
-int *ux_get_errno_(void) UX_SYM03_(errno);
+int *__ux_get_errno(void) __UX_SYM03(errno);
 
-UX_END_DECLS_
+__UX_END_DECLS
 
-# define errno                         (*ux_get_errno_())
+# define errno                         (*__ux_get_errno())
 
 /* errno values are part of the ABI between the libc and the operating system
  * kernel, and as a consequence must match up properly.
@@ -67,4 +67,4 @@ UX_END_DECLS_
 #  include <ux/msvcrt/errno.h>
 # endif
 
-#endif /*!UX_ERRNO_H_*/
+#endif /*!__UX_ERRNO_H*/
