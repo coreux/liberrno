@@ -14,11 +14,11 @@
 
 ACLOCAL_AMFLAGS = -I .
 
-EXTRA_DIST = LICENSE-2.0 regen-acinclude.sh
+EXTRA_DIST = regen-acinclude.sh
 
 DIST_SUBDIRS = ux
 
-SUBDIRS = ux
+SUBDIRS = ux .
 
 noinst_LTLIBRARIES = liberrno.la
 
@@ -26,3 +26,7 @@ include_HEADERS = errno.h
 
 liberrno_la_SOURCES = p_liberrno.h \
 	errno.c
+
+liberrno_la_CPPFLAGS = @AM_CPPFLAGS@ @UX_CPPFLAGS@
+
+dist_doc_DATA = LICENSE-2.0

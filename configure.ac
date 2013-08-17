@@ -25,7 +25,34 @@ BT_ENABLE_XSI
 AC_CONFIG_HEADER([config.h])
 LT_INIT
 
-AC_CHECK_HEADER([ux/cdefs.h],,[AC_MSG_ERROR([cannot locate required ux/cdefs.h; ensure the UX include package is installed])])
+AC_ARG_WITH([ux],[AS_HELP_STRING([--with-ux=PREFIX],[Specify UX installation prefix])],[ux_prefix="$withval"],[ux_prefix="yes"])
+if test x"$ux_prefix" = x"no" ; then
+	true
+elif test x"$ux_prefix" = x"yes" ; then
+	old_prefix="$prefix"
+	old_exec_prefix="$exec_prefix"
+	if test x"$prefix" = x"NONE" ; then
+		prefix="$ac_default_prefix"
+	fi
+	if test x"$exec_prefix" = x"NONE" ; then
+		exec_prefix="$prefix"
+	fi
+	UX_CPPFLAGS="$UX_CPPFLAGS -I`eval echo $includedir`"
+	prefix="$old_prefix"
+	exec_prefix="$old_exec_prefix"
+else
+	UX_CPPFLAGS="$UX_CPPFLAGS -I$ux_prefix/include"
+fi
+AC_SUBST([UX_CPPFLAGS])
+old_CPPFLAGS="$CPPFLAGS"
+CPPFLAGS="$UX_CPPFLAGS"
+AC_CHECK_HEADER([ux/cdefs.h],,[AC_MSG_ERROR([cannot locate required ux/cdefs.h; ensure the UX include package is installed])],[-])
+CPPFLAGS="$old_CPPFLAGS"
+
+# Override docdir
+if test x"$docdir" = x'${datarootdir}/doc/${PACKAGE_TARNAME}' ; then
+	docdir='${datarootdir}/doc/ux'
+fi
 
 AC_CONFIG_FILES([Makefile
 ux/Makefile
