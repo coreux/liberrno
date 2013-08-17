@@ -14,7 +14,7 @@
 
 ACLOCAL_AMFLAGS = -I .
 
-EXTRA_DIST = regen-acinclude.sh
+EXTRA_DIST = regen-acinclude.sh README
 
 DIST_SUBDIRS = ux
 
