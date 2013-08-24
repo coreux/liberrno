@@ -37,7 +37,10 @@ elif test x"$ux_prefix" = x"yes" ; then
 	if test x"$exec_prefix" = x"NONE" ; then
 		exec_prefix="$prefix"
 	fi
-	UX_CPPFLAGS="$UX_CPPFLAGS -I`eval echo $includedir`"
+	uxincdir=`eval echo $includedir`
+	if test -d "$uxincdir/ux" && test -r "$uxincdir/ux/cdefs.h" ; then
+		UX_CPPFLAGS="$UX_CPPFLAGS -I`eval echo $includedir`"
+	fi
 	prefix="$old_prefix"
 	exec_prefix="$old_exec_prefix"
 else
