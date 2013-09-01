@@ -14,13 +14,23 @@
 
 ACLOCAL_AMFLAGS = -I .
 
-EXTRA_DIST = regen-acinclude.sh README
+EXTRA_DIST = regen-acinclude.sh README liberrno-uninstalled.pc.in liberrno.pc.in
 
 DIST_SUBDIRS = ux
 
 SUBDIRS = ux .
 
+noinst_DATA = liberrno-uninstalled.pc
+
+pcdir = @libdir@/pkgconfig
+
+if BUILD_STANDALONE
+lib_LTLIBRARIES = liberrno.la
+pc_DATA = liberrno.pc
+else
 noinst_LTLIBRARIES = liberrno.la
+noinst_DATA += liberrno.pc
+endif
 
 include_HEADERS = errno.h
 
@@ -28,5 +38,7 @@ liberrno_la_SOURCES = p_liberrno.h \
 	errno.c
 
 liberrno_la_CPPFLAGS = @AM_CPPFLAGS@ @UX_CPPFLAGS@
+
+liberrno_la_LDFLAGS = -avoid-version
 
 dist_doc_DATA = LICENSE-2.0

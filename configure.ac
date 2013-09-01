@@ -18,12 +18,20 @@ AC_CONFIG_MACRO_DIR([.])
 AM_INIT_AUTOMAKE([foreign])
 AM_MAINTAINER_MODE
 BT_PROG_XCODE
-AC_PROG_CC
+AC_PROG_CC([clang c99 gcc cc])
 AC_PROG_CC_C99
 BT_PROG_CC_WARN
 BT_ENABLE_XSI
 AC_CONFIG_HEADER([config.h])
 LT_INIT
+
+dnl If --disable-standalone-components was specified, don't install the .la
+dnl or .pc files
+AC_ARG_ENABLE([standalone],[AS_HELP_STRING([--disable-standalone],[don't install a standalone library])],[build_standalone=$enableval],[build_standalone=yes])
+
+AM_CONDITIONAL([BUILD_STANDALONE],[test x"$build_standalone" = x"yes"])
+
+
 
 AC_ARG_WITH([ux],[AS_HELP_STRING([--with-ux=PREFIX],[Specify UX installation prefix])],[ux_prefix="$withval"],[ux_prefix="yes"])
 if test x"$ux_prefix" = x"no" ; then
@@ -58,6 +66,8 @@ if test x"$docdir" = x'${datarootdir}/doc/${PACKAGE_TARNAME}' ; then
 fi
 
 AC_CONFIG_FILES([Makefile
+liberrno-uninstalled.pc
+liberrno.pc
 ux/Makefile
 ux/beos/Makefile
 ux/cygwin/Makefile
