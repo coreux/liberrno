@@ -1,0 +1,8 @@
+top_srcdir=@abs_top_srcdir@
+top_builddir=@abs_top_builddir@
+
+Name: @PACKAGE_NAME@
+Version: @PACKAGE_VERSION@
+Description: errno(3) component of UX libc
+Cflags: -I${top_srcdir} -I${top_builddir}
+Libs: ${top_builddir}/liberrno.la
